@@ -48,7 +48,7 @@ module BlockchainService
         payment_addresses_where(address: address) do |payment_address|
           deposit_txs = client.build_transaction(tx: tx, currency: payment_address.currency)
           deposit_txs.fetch(:entries).each_with_index do |entry, index|
-            if entry[:amount] <= payment_address.currency.min_deposit_amount
+            if entry[:amount] <= payment_address.currency.min_collection_amount
               # Currently we just skip small deposits. Custom behavior will be implemented later.
               Rails.logger.info do  "Skipped deposit with txid: #{deposit_txs[:id]} with amount: #{entry[:amount]}"\
                                      " from #{address} in block number #{ledger_index}"
