@@ -51,11 +51,11 @@ module BlockchainService
 	          next if txn.nil? || client.invalid_erc20_transaction?(txn)
           end
 
-          payment_addresses_where(address: client.to_address(txn)) do |payment_address|
+          payment_addresses_where(address: client.to_address(txn)).each_with_index do |payment_address, i|
 
             deposit_txs = client.build_transaction(txn, block_json, payment_address.currency)
-            deposit_txs.fetch(:entries).each_with_index do |entry, i|
-              if entry[:amount] <= payment_address.currency.min_collection_amount
+            deposit_txs.fetch(:entries).each do |entry|
+              if entry[:amount] <= payment_address.currency.min_deposit_amount
                 # Currently we just skip small deposits. Custom behavior will be implemented later.
                 Rails.logger.info do  "Skipped deposit with txid: #{deposit_txs[:id]} with amount: #{entry[:amount]}"\
                                      " from #{entry[:address]} in block number #{deposit_txs[:block_number]}"
