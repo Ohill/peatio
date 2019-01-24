@@ -4,16 +4,16 @@ Member API is API which can be used by client application like SPA.
 
 **Version:** 1.9.18
 
-**Contact information:**  
-peatio.tech  
-https://www.peatio.tech  
-hello@peatio.tech  
+**Contact information:**
+peatio.tech
+https://www.peatio.tech
+hello@peatio.tech
 
 **License:** https://github.com/rubykube/peatio/blob/master/LICENSE.md
 
 ### Security
 ---
-**Bearer**  
+**Bearer**
 
 |apiKey|*API Key*|
 |---|---|
@@ -55,9 +55,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get all available markets. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get all available markets. | [ [Market](#market) ] |
 
 ### /v2/tickers/{market}
 ---
@@ -94,9 +94,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get your profile and accounts info. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get your profile and accounts info. | [Member](#member) |
 
 ### /v2/deposits
 ---
@@ -113,9 +113,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get your deposits history. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get your deposits history. | [ [Deposit](#deposit) ] |
 
 ### /v2/deposit
 ---
@@ -130,9 +130,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get details of specific deposit. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get details of specific deposit. | [Deposit](#deposit) |
 
 ### /v2/deposit_address
 ---
@@ -148,9 +148,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Returns deposit address for account you want to deposit to. The address may be blank because address generation process is still in progress. If this case you should try again later. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Returns deposit address for account you want to deposit to. The address may be blank because address generation process is still in progress. If this case you should try again later. | [Deposit](#deposit) |
 
 ### /v2/orders/clear
 ---
@@ -165,9 +165,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 201 | Cancel all my orders. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 201 | Cancel all my orders. | [Order](#order) |
 
 ### /v2/orders
 ---
@@ -186,9 +186,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 201 | Create a Sell/Buy order. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 201 | Create a Sell/Buy order. | [Order](#order) |
 
 ##### ***GET***
 **Description:** Get your orders, results is paginated.
@@ -205,9 +205,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get your orders, results is paginated. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get your orders, results is paginated. | [ [Order](#order) ] |
 
 ### /v2/orders/multi
 ---
@@ -226,9 +226,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 201 | Create multiple sell/buy orders. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 201 | Create multiple sell/buy orders. | [Order](#order) |
 
 ### /v2/order/delete
 ---
@@ -243,9 +243,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 201 | Cancel an order. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 201 | Cancel an order. | [Order](#order) |
 
 ### /v2/order
 ---
@@ -260,9 +260,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get information of specified order. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get information of specified order. | [Order](#order) |
 
 ### /v2/order_book
 ---
@@ -279,9 +279,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get the order book of specified market. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get the order book of specified market. | [ [OrderBook](#orderbook) ] |
 
 ### /v2/depth
 ---
@@ -319,9 +319,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get your executed trades. Trades are sorted in reverse creation order. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get your executed trades. Trades are sorted in reverse creation order. | [ [Trade](#trade) ] |
 
 ### /v2/trades
 ---
@@ -341,9 +341,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get recent trades on market, each trade is included only once. Trades are sorted in reverse creation order. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get recent trades on market, each trade is included only once. Trades are sorted in reverse creation order. | [ [Trade](#trade) ] |
 
 ### /v2/k
 ---
@@ -414,9 +414,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | List your withdraws as paginated collection. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | List your withdraws as paginated collection. | [ [Withdraw](#withdraw) ] |
 
 ### /v2/sessions
 ---
@@ -456,9 +456,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Returns deposit fees for currencies. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Returns deposit fees for currencies. | [Deposit](#deposit) |
 
 ### /v2/fees/withdraw
 ---
@@ -467,9 +467,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Returns withdraw fees for currencies. |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Returns withdraw fees for currencies. | [Withdraw](#withdraw) |
 
 ### /v2/member_levels
 ---
@@ -495,9 +495,9 @@ hello@peatio.tech
 
 **Responses**
 
-| Code | Description |
-| ---- | ----------- |
-| 200 | Get currency trades at last 24h |
+| Code | Description | Schema |
+| ---- | ----------- | ------ |
+| 200 | Get currency trades at last 24h | [Trade](#trade) |
 
 ### /v2/currencies
 ---
@@ -536,7 +536,7 @@ hello@peatio.tech
 ### Models
 ---
 
-### Account  
+### Account
 
 Get list of user accounts
 
@@ -546,7 +546,108 @@ Get list of user accounts
 | balance | double | Account balance. | No |
 | locked | double | Account locked funds. | No |
 
-### Currency  
+### Market
+
+Get all available markets.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | string | Unique market id. It's always in the form of xxxyyy,where xxx is the base currency code, yyy is the quotecurrency code, e.g. 'btcusd'. All available markets canbe found at /api/v2/markets. | No |
+| name | string | Market name. | No |
+
+### Member
+
+Get your profile and accounts info.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| uid | string | Member UID. | No |
+| email | string | Member email. | No |
+| accounts | [ [Account](#account) ] | Member accounts. | No |
+
+### Deposit
+
+Returns deposit fees for currencies.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | integer | Unique deposit id. | No |
+| currency | string | Deposit currency id. | No |
+| amount | double | Deposit amount. | No |
+| fee | double | Deposit fee. | No |
+| txid | string | Deposit transaction id. | No |
+| confirmations | integer | Number of deposit confirmations. | No |
+| state | string | Deposit state. | No |
+| created_at | string | The datetime when deposit was created. | No |
+| completed_at | string | The datetime when deposit was completed.. | No |
+
+### Order
+
+Get information of specified order.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | integer | Unique order id. | No |
+| side | string | Either 'sell' or 'buy'. | No |
+| ord_type | string | Type of order, either 'limit' or 'market'. | No |
+| price | double | Price for each unit. e.g.If you want to sell/buy 1 btc at 3000 usd, the price is '3000.0' | No |
+| avg_price | double | Average execution price, average of price in trades. | No |
+| state | string | One of 'wait', 'done', or 'cancel'.An order in 'wait' is an active order, waiting fulfillment;a 'done' order is an order fulfilled;'cancel' means the order has been canceled. | No |
+| market | string | The market in which the order is placed, e.g. 'btcusd'.All available markets can be found at /api/v2/markets. | No |
+| created_at | string | Order create time in iso8601 format. | No |
+| volume | double | The amount user want to sell/buy.An order could be partially executed,e.g. an order sell 5 btc can be matched with a buy 3 btc order,left 2 btc to be sold; in this case the order's volume would be '5.0',its remaining_volume would be '2.0', its executed volume is '3.0'. | No |
+| remaining_volume | double | The remaining volume, see 'volume'. | No |
+| executed_volume | double | The executed volume, see 'volume'. | No |
+| trades_count | integer | Count of trades. | No |
+| trades | [ [Trade](#trade) ] | Trades wiht this order. | No |
+
+### Trade
+
+Get currency trades at last 24h
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | string | Trade ID. | No |
+| price | string | Trade price. | No |
+| volume | string | Trade volume. | No |
+| funds | string | Trade funds. | No |
+| market | string | Trade market id. | No |
+| created_at | string | Trade create time in iso8601 format. | No |
+| maker_type | string |  Trade maker order type (sell or buy). | No |
+| type | string | Trade type. | No |
+| side | string | Trade side. | No |
+| order_id | string | Order id. | No |
+
+
+### OrderBook
+
+Get the order book of specified market.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| asks | [ [Order](#order) ] | Asks in orderbook | No |
+| bids | [ [Order](#order) ] | Bids in orderbook | No |
+
+### Withdraw
+
+Returns withdraw fees for currencies.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| id | integer | The withdrawal id. | No |
+| currency | string | The currency code. | No |
+| type | string | The withdrawal type | No |
+| amount | string | The withdrawal amount | No |
+| fee | double | The exchange fee. | No |
+| blockchain_txid | string | The withdrawal transaction id. | No |
+| rid | string | The beneficiary ID or wallet address on the Blockchain. | No |
+| state | string | The withdrawal state. | No |
+| confirmations | integer | Number of confirmations. | No |
+| created_at | string | The datetimes for the withdrawal. | No |
+| updated_at | string | The datetimes for the withdrawal. | No |
+| done_at | string | The datetime when withdraw was completed | No |
+
+### Currency
 
 Get a currency
 
